@@ -1,0 +1,18 @@
+from fastapi import FastAPI
+from app.api.receipt_api import router as receipt_router
+
+app = FastAPI(
+    title="Universal Receipt Scanner API",
+    description="API to extract structured expense data from receipt images",
+    version="1.0.0"
+)
+
+app.include_router(receipt_router)
+
+@app.get("/health")
+def health_check():
+    return {"status": "running"}
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
