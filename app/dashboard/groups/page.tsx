@@ -1,7 +1,5 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import Sidebar from '@/components/Sidebar';
-import Topbar from '@/components/Topbar';
 import GroupCard from '@/components/groups/GroupCard';
 import CreateGroupModal from '@/components/groups/CreateGroupModal';
 import JoinGroupModal from '@/components/groups/JoinGroupModal';
@@ -49,12 +47,7 @@ export default function GroupsPage() {
   };
 
   return (
-    <div className="h-screen flex overflow-hidden bg-app-bg text-slate-300 font-sans">
-      <Sidebar />
-      <main className="flex-1 flex flex-col min-w-0 overflow-hidden relative">
-        <Topbar />
-        
-        <div className="flex-1 overflow-y-auto w-full">
+    <>
           
           {/* Header */}
           <header className="p-6 md:p-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
@@ -112,8 +105,6 @@ export default function GroupsPage() {
             )}
           </section>
 
-        </div>
-      </main>
 
       {/* Modals */}
       <CreateGroupModal 
@@ -127,6 +118,6 @@ export default function GroupsPage() {
         onClose={() => setIsJoinModalOpen(false)} 
         onSuccess={fetchGroups} 
       />
-    </div>
+    </>
   );
 }

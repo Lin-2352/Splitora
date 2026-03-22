@@ -1,7 +1,5 @@
 "use client"
 import React, { useState, useEffect, use } from 'react';
-import Sidebar from '@/components/Sidebar';
-import Topbar from '@/components/Topbar';
 import Link from 'next/link';
 
 import GroupHeader from '@/components/groups/details/GroupHeader';
@@ -60,11 +58,7 @@ export default function GroupDetailsPage({ params }: { params: Promise<{ groupId
   );
 
   return (
-    <div className="h-screen flex overflow-hidden bg-app-bg text-slate-300 font-sans relative">
-      <Sidebar />
-      <main className="flex-1 flex flex-col min-w-0 overflow-hidden relative z-10">
-        <Topbar />
-        
+    <>
         <div className="flex-1 overflow-y-auto w-full">
           {error && (
             <div className="p-8">
@@ -149,7 +143,6 @@ export default function GroupDetailsPage({ params }: { params: Promise<{ groupId
             </div>
           )}
         </div>
-      </main>
 
       {/* Modals */}
       {group && (
@@ -171,6 +164,6 @@ export default function GroupDetailsPage({ params }: { params: Promise<{ groupId
           />
         </>
       )}
-    </div>
+    </>
   );
 }

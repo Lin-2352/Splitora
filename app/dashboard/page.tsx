@@ -1,6 +1,4 @@
 import React from 'react';
-import Sidebar from '@/components/Sidebar';
-import Topbar from '@/components/Topbar';
 import HeroCard from '@/components/dashboard/HeroCard';
 import LineChartCard from '@/components/dashboard/LineChartCard';
 import BalanceChartCard from '@/components/dashboard/BalanceChartCard';
@@ -14,49 +12,43 @@ import BudgetAlertCard from '@/components/dashboard/BudgetAlertCard';
 
 export default function Dashboard() {
   return (
-    <div className="h-screen flex overflow-hidden bg-app-bg text-slate-300 font-sans">
-      <Sidebar />
-      <main className="flex-1 flex flex-col min-w-0 overflow-hidden relative">
-        <Topbar />
+    <div className="flex-1 overflow-y-auto p-6 md:p-8">
+      <div className="max-w-[1600px] mx-auto">
         
-        <div className="flex-1 overflow-y-auto p-6 md:p-8">
-          <div className="max-w-[1600px] mx-auto">
+        {/* Main Grid Layout */}
+        <div className="grid grid-cols-1 xl:grid-cols-12 gap-6">
+          
+          {/* LEFT COLUMN — 8/12 */}
+          <div className="xl:col-span-8 flex flex-col gap-6">
+            <HeroCard />
             
-            {/* Main Grid Layout */}
-            <div className="grid grid-cols-1 xl:grid-cols-12 gap-6">
-              
-              {/* LEFT COLUMN — 8/12 */}
-              <div className="xl:col-span-8 flex flex-col gap-6">
-                <HeroCard />
-                
-                <DashboardGroups />
+            <DashboardGroups />
 
-                {/* Treemap + Pie Chart row */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <GroupTreemap />
-                  <BalanceChartCard />
-                </div>
-
-                {/* Activity + Spending Chart */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <BalanceCard />
-                  <LineChartCard />
-                </div>
-              </div>
-              
-              {/* RIGHT COLUMN — 4/12 */}
-              <div className="xl:col-span-4 flex flex-col gap-6">
-                <ProfitCard />
-                <MonthlySummaryCard />
-                <SettlementRateCard />
-                <BudgetAlertCard />
-              </div>
-              
+            {/* Treemap + Pie Chart row */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <GroupTreemap />
+              <BalanceChartCard />
             </div>
-            
+
+            {/* Activity + Spending Chart */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <BalanceCard />
+              <LineChartCard />
+            </div>
           </div>
+          
+          {/* RIGHT COLUMN — 4/12 */}
+          <div className="xl:col-span-4 flex flex-col gap-6">
+            <ProfitCard />
+            <MonthlySummaryCard />
+            <SettlementRateCard />
+            <BudgetAlertCard />
+          </div>
+          
         </div>
-      </main>
+        
+      </div>
     </div>
   );
 }
+

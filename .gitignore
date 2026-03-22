@@ -41,3 +41,17 @@ yarn-error.log*
 next-env.d.ts
 
 /design
+
+# chatbot backup (not needed in repo)
+/chatbot
+
+# IDE
+.idea/
+.vscode/
+
+# env without dot prefix
+env.local
+
+# agent/gemini
+.gemini/
+.agents/
