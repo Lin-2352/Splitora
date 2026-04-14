@@ -1,0 +1,75 @@
+# Next.js
+.next/
+/out/
+/build/
+
+# Node
+/node_modules/
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# Testing
+/coverage
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Env
+.env*
+.env.local
+env.local
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+.venv/
+env/
+*.egg-info/
+dist/
+.pytest_cache/
+
+# Misc
+.DS_Store
+*.pem
+*.log
+
+# Project specific
+/design/
+/description.md
+frontend/
+
+# chatbot backup (not needed in repo)
+/chatbot
+
+# IDE
+.idea/
+.vscode/
+
+# agent/gemini
+.gemini/
+.agents/
+report_text.txt
+.idea/
+.env
+.env.local
+node_modules/
